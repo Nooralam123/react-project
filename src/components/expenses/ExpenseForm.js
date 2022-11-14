@@ -27,7 +27,7 @@ const ExpenseForm = (props) => {
                 date:new Date(enterDate)
             }
             console.log(expenseData)
-            props.saveExpenseData(expenseData)
+            props.onSaveExpenseData(expenseData)
             setEnterTitle('')
             setEnterAmount('')
             setEnterDate('')
@@ -39,19 +39,19 @@ const ExpenseForm = (props) => {
             <form onSubmit={submitForm} style={{display:"flex",justifyContent
         :"center"}}>
                 <div>
-                <label>Title</label>
+                <label><b>Title</b></label>
                 <input type="text" value={enterTitle}  onChange={titleChangeHandler} />
                 </div>
                 <div>
-                <label>Amount</label>
+                <label><b>Amount</b></label>
                 <input type="Number" min="10" max="1000" value={enterAmount} onChange={amountChangeHandler} />
                 </div>
                 <div>
-                <label>Date</label>
+                <label><b>Date</b></label>
                 <input type="date" value={enterDate} onChange={dateChangeHandler} />
                 </div>
                 <div>
-                    <button type='submit'>submit</button>
+                      <button type='submit'>submit</button>
                 </div>
             </form>
         </div>

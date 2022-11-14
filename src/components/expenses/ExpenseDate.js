@@ -8,9 +8,9 @@ const ExpenseDate = (props) => {
   return (
     <div>
     <div>
-        <div>{month}</div>
-        <div>{day}</div>
-        <div>{year}</div>
+        <div><b>{month}</b></div>
+        <div><b>{day}</b></div>
+        <div><b>{year}</b></div>
         </div>
         </div>
   )
