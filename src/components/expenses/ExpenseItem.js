@@ -1,24 +1,22 @@
-import React,{useState} from 'react'
+import React from 'react'
 import ExpenseDate from './ExpenseDate'
 
 const ExpenseItem = (props) => {
-    const [title,setTitle] = useState(props.title)
-    const addExpense = () => {
-       setTitle("Update!")
-    }
+   
 
   return (
     <>
-    <div>
+    <div style={{display:"flex" , justifyContent:"space-around", border:"2px solid black",
+               marginBottom:"10px", marginLeft:"15%",
+                 marginTop:"10px", width:"70%"}}>
         <ExpenseDate date={props.date} />
         <div className='expense_discription'>
-            <h4>{title}</h4>
+            <h4>{props.title}</h4>
         </div>
         <div className='expense_amount'>
             <h4>{props.amount}</h4>
         </div>
     </div>
-    <button onClick={addExpense}>add item</button>
     </>
   )
 }

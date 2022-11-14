@@ -1,8 +1,13 @@
 
 import './App.css';
 import ExpenseItem from './components/expenses/ExpenseItem';
+import ExpenseForm from './components/expenses/ExpenseForm';
 
 function App() {
+const saveExpenseDataHandler = expense => {
+  console.log(expense)
+}
+
   let expenses = [
     {
       id:1,
@@ -26,7 +31,8 @@ function App() {
   return (
     <div className="App">
       <h1>ExpenseItem</h1>
-                 <ExpenseItem date={expenses[0].date}
+                 <ExpenseForm  saveExpenseData={saveExpenseDataHandler}/>
+                  <ExpenseItem date={expenses[0].date}
                   title={expenses[0].title}
                   amount={expenses[0].amount}/>
                    <ExpenseItem date={expenses[1].date}
@@ -35,6 +41,7 @@ function App() {
                    <ExpenseItem date={expenses[2].date}
                   title={expenses[2].title}
                   amount={expenses[2].amount}/>
+                
     </div>
   );
 }
