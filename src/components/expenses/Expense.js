@@ -9,15 +9,26 @@ const Expense = (props) => {
   const filterChangeHandler = selectedYear => {
     setFilteredYear(selectedYear);
   };
+
+  const filterExpenses = props.item.filter(expense => {
+    return expense.date.getFullYear().toString()===filteredYear
+  })
+
+  let expenseContent = <p>No content found</p>
+  if(filterExpenses.length>0){
+    expenseContent =  filterExpenses.map(expense => <ExpenseItem 
+        key = {expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+       />)
+  }
+
   return (
     <div>
         <FilterExpense selected={filteredYear} onChangeFilter={filterChangeHandler} />
-        {props.item.map(expense => <ExpenseItem 
-         key = {expense.id}
-         title={expense.title}
-         amount={expense.amount}
-         date={expense.date}
-        />)}           
+        {expenseContent}
+                     
     </div>
   )
 }

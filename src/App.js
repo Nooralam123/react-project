@@ -7,19 +7,19 @@ import Expense from './components/expenses/Expense';
 let dummyData = [
   {
     id:1,
-    date: new Date(),
+    date: new Date("2020-03-22"),
     title:"car insurance",
     amount:200
   },
   {
     id:2,
-    date: new Date(),
+    date: new Date("2021-06-8"),
     title:"TV price",
     amount:100
   },
   {
     id:3,
-    date: new Date(),
+    date: new Date("2019-05-26"),
     title:"Food",
     amount:300
   },
